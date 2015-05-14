@@ -10,6 +10,8 @@
 
 @interface BPDTimes : NSManagedObject
 
+
+// criando variáveis do banco de dados
 @property (nonatomic, retain) NSString *nome;
 @property (nonatomic, retain) NSString *sigla;
 @property (nonatomic, retain) NSString *conferencia;
