@@ -51,7 +51,7 @@
             </objects>
             <point key="canvasLocation" x="-750" y="301"/>
         </scene>
-        <!--Add New Time View Controller-->
+        <!--Novo Time-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="AddNewTimeViewController" sceneMemberID="viewController">
@@ -99,6 +99,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Novo Time" id="tFr-8z-0jS">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="Kdq-gk-o1Z"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="conferenciaField" destination="hpD-eo-fMo" id="uuj-hG-DK8"/>

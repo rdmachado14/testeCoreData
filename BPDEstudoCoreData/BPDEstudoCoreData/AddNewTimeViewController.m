@@ -24,6 +24,14 @@
 
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear: animated];
+    self.nomeField.text = self.times.nome;
+    self.siglaField.text = self.times.sigla;
+    self.conferenciaField.text = self.times.conferencia;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
