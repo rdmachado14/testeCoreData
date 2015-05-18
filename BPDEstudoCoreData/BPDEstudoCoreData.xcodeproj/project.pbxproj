@@ -17,6 +17,7 @@
 		7993EB291B0537EC004D61BE /* BPDEstudoCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7993EB281B0537EC004D61BE /* BPDEstudoCoreDataTests.m */; };
 		7993EB381B053919004D61BE /* BPDTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7993EB371B053919004D61BE /* BPDTimes.m */; };
 		7993EB3C1B053968004D61BE /* BPDTimesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7993EB3B1B053968004D61BE /* BPDTimesStore.m */; };
+		7993EB3F1B0A853F004D61BE /* AddNewTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7993EB3E1B0A853F004D61BE /* AddNewTimeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		7993EB371B053919004D61BE /* BPDTimes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDTimes.m; sourceTree = "<group>"; };
 		7993EB3A1B053968004D61BE /* BPDTimesStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDTimesStore.h; sourceTree = "<group>"; };
 		7993EB3B1B053968004D61BE /* BPDTimesStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDTimesStore.m; sourceTree = "<group>"; };
+		7993EB3D1B0A853F004D61BE /* AddNewTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewTimeViewController.h; sourceTree = "<group>"; };
+		7993EB3E1B0A853F004D61BE /* AddNewTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewTimeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,8 @@
 			children = (
 				7993EB131B0537EC004D61BE /* ViewController.h */,
 				7993EB141B0537EC004D61BE /* ViewController.m */,
+				7993EB3D1B0A853F004D61BE /* AddNewTimeViewController.h */,
+				7993EB3E1B0A853F004D61BE /* AddNewTimeViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				7993EB151B0537EC004D61BE /* ViewController.m in Sources */,
 				7993EB381B053919004D61BE /* BPDTimes.m in Sources */,
 				7993EB121B0537EC004D61BE /* BPDEstudoCoreData.xcdatamodeld in Sources */,
+				7993EB3F1B0A853F004D61BE /* AddNewTimeViewController.m in Sources */,
 				7993EB3C1B053968004D61BE /* BPDTimesStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +470,7 @@
 				7993EB2E1B0537EC004D61BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7993EB2F1B0537EC004D61BE /* Build configuration list for PBXNativeTarget "BPDEstudoCoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +479,7 @@
 				7993EB311B0537EC004D61BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

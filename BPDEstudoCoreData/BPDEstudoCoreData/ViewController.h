@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BPDTimes.h"
 
-@interface ViewController : UIViewController
+
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 
 @end
