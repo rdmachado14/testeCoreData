@@ -9,10 +9,10 @@
 #import "BPDTimesStore.h"
 
 @interface BPDTimesStore ()
+
 @property (nonatomic) NSMutableArray *privateItems;
 
 //usados em decorrencia do core data
-
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end
@@ -60,7 +60,8 @@
 {
     BPDTimes *times = [NSEntityDescription insertNewObjectForEntityForName:@"BPDTimes" inManagedObjectContext: self.managedObjectContext];
     
-    times.sigla = [[[NSUUID alloc] init] UUIDString];
+    times.code = [[[NSUUID alloc] init] UUIDString];
+    times.sigla = sigla;
     times.nome = nome;
     times.conferencia = conferencia;
     

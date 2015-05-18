@@ -27,6 +27,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear: animated];
+    
     self.nomeField.text = self.time.nome;
     self.siglaField.text = self.time.sigla;
     self.conferenciaField.text = self.time.conferencia;

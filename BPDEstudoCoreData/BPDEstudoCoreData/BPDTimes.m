@@ -13,6 +13,7 @@
 @dynamic nome;
 @dynamic sigla;
 @dynamic conferencia;
+@dynamic code;
 
 
 @end

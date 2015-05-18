@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Rodrigo DAngelo Silva Machado. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
 @interface BPDTimes : NSManagedObject
@@ -15,6 +16,7 @@
 @property (nonatomic, retain) NSString *nome;
 @property (nonatomic, retain) NSString *sigla;
 @property (nonatomic, retain) NSString *conferencia;
+@property (nonatomic, retain) NSString *code;
 
 
 
