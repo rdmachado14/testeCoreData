@@ -38,5 +38,24 @@
     
 }
 
+// ação do botão salvar
+- (IBAction)salvarTime:(id)sender
+{
+    [[BPDTimesStore sharedStore] addNewTimeByNome:self.nomeField.text
+                                         andSigla:self.siglaField.text
+                                   andConferencia:self.conferenciaField.text];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+/* Dispensa o teclado quando a tecla de retorno for tocada
+ */
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
 
 @end
