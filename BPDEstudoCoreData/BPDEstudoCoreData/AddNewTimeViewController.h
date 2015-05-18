@@ -11,7 +11,7 @@
 
 @interface AddNewTimeViewController : UIViewController <UITextFieldDelegate>
 
-@property (nonatomic, strong) BPDTimes *times;
+@property (nonatomic, strong) BPDTimes *time;
 
 
 @end

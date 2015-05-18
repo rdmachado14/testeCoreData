@@ -7,31 +7,78 @@
 //
 
 #import "TimesViewController.h"
+#import "BPDTimes.h"
+#import "BPDTimesStore.h"
+#import "AppDelegate.h"
+#import "AddNewTimeViewController.h"
 
 @interface TimesViewController ()
+
+@property (weak, nonatomic) IBOutlet UITableView *timesTableView;
+
+
 
 @end
 
 @implementation TimesViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
-- (void)didReceiveMemoryWarning {
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear: animated];
+    [self.timesTableView reloadData];
+    [self.timesTableView setNeedsDisplay];
+}
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.timesTableView indexPathForSelectedRow];
+    
+    if (indexPath.row > 0)
+    {
+        AddNewTimeViewController *detailTime = segue.destinationViewController;
+        
+        NSArray *times = [[BPDTimesStore sharedStore] getAllTimes];
+        BPDTimes *selectedTime = times[indexPath.row];
+        
+        detailTime.time = selectedTime;
+    }
 }
-*/
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [[[BPDTimesStore sharedStore] getAllTimes] count];
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"TimesCellTableView";
+    UITableViewCell *cell = (UITableViewCell *) [self.timesTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewRowActionStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    
+    BPDTimes *t = [[[BPDTimesStore sharedStore] getAllTimes] objectAtIndex: indexPath.row];
+    
+    cell.textLabel.text = t.nome;
+    cell.textLabel.text = t.sigla;
+    
+    return cell;
+}
+
+
 
 @end
