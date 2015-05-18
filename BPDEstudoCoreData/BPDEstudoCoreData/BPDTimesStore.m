@@ -37,7 +37,6 @@
     return self;
 }
 
-// exceção caso o objeto seja criado na tora!!!
 - (instancetype) init
 {
     @throw [NSException exceptionWithName:@"Singleton" reason:@"USE +[BPDTimesStore sharedStore]" userInfo:nil];
@@ -58,7 +57,10 @@
 
 - (void) addNewTimeByNome:(NSString *)nome andSigla:(NSString *)sigla andConferencia:(NSString *)conferencia
 {
-    BPDTimes *times = [NSEntityDescription insertNewObjectForEntityForName:@"BPDTimes" inManagedObjectContext: self.managedObjectContext];
+    NSLog(@"addNewTimeByNome: %@-%@-%@", nome, sigla, conferencia);
+    
+    
+    BPDTimes *times = [NSEntityDescription insertNewObjectForEntityForName:@"BPDTimes" inManagedObjectContext:self.managedObjectContext];
     
     times.code = [[[NSUUID alloc] init] UUIDString];
     times.sigla = sigla;
@@ -78,7 +80,8 @@
 // recupera todos os times salvos no banco de dados
 - (void) loadAllTimes
 {
-    if (!self.privateItems){
+    if (!self.privateItems)
+    {
         
         // objeto para buscar dados no BD
         NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"BPDTimes"];
@@ -88,7 +91,8 @@
         // executa consulta no BD
         NSArray *result = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
         
-        if (!result) {
+        if (!result)
+        {
             [NSException raise:@"Fetch failed" format:@"Reason: %@", [error localizedDescription]];
         }
         
