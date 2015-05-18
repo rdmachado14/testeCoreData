@@ -68,7 +68,7 @@
     
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewRowActionStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
     BPDTimes *t = [[[BPDTimesStore sharedStore] getAllTimes] objectAtIndex: indexPath.row];
