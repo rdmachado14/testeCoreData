@@ -47,22 +47,6 @@
                                    andConferencia:self.conferenciaField.text];
     
     [self.navigationController popViewControllerAnimated:YES];
-    
-    /*if (! self.time)
-    {
-        self.time = [BPDTimes addNewTimeByNome:self.nomeField.text andSigla:self.siglaField.text andConferencia:self.conferenciaField.text];
-    }
-    else
-    {
-        self.time.nome = self.nomeField.text;
-        self.time.sigla = self.siglaField.text;
-        self.time.conferencia = self.conferenciaField.text;
-    }
-    
-    [[BPDTimesStore sharedStore] ];
-    
-    [self.navigationController popViewControllerAnimated:YES];*/
-
 }
 
 /* Dispensa o teclado quando a tecla de retorno for tocada

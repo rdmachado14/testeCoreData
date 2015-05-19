@@ -7,6 +7,8 @@
 //
 
 #import "BPDTimesStore.h"
+#import "AppDelegate.h"
+#import "BPDTimes.h"
 
 @interface BPDTimesStore ()
 
@@ -106,5 +108,30 @@
 {
     return [self.privateItems copy];
 }
+
+// deletar dados
+- (void) remove: (BPDTimesStore *) times
+{
+    [self.managedObjectContext deleteObject:times];
+}
+
+- (BOOL)saveChanges
+{
+    NSError *error;
+    
+    if ([self.managedObjectContext hasChanges]) {
+        BOOL successful = [self.managedObjectContext save:&error];
+        
+        if (!successful)
+        {
+            NSLog(@"Error saving: %@", [error localizedDescription]);
+        }
+        
+        return successful;
+    }
+    
+    return YES;
+}
+
 
 @end
