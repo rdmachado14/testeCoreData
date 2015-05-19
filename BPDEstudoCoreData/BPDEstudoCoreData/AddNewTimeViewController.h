@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BPDTimes.h"
+#import <CoreData/CoreData.h>
 
 @interface AddNewTimeViewController : UIViewController <UITextFieldDelegate>
 

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BPDTimesStore.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[BPDTimesStore sharedStore] setManagedObjectContext:
+     [self managedObjectContext]];
     // Override point for customization after application launch.
     return YES;
 }
