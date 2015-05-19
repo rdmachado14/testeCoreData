@@ -9,13 +9,12 @@
 #import "TimesViewController.h"
 #import "BPDTimes.h"
 #import "BPDTimesStore.h"
-#import "AppDelegate.h"
 #import "AddNewTimeViewController.h"
 
 @interface TimesViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *timesTableView;
-
+@property (nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
 
 
 @end
@@ -79,6 +78,15 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        BPDTimes *t = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        BPDTimesStore *store = [BPDTimesStore sharedStore];
+        
+    }
+}
 
 
 @end

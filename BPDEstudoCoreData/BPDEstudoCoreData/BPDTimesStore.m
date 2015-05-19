@@ -110,9 +110,9 @@
 }
 
 // deletar dados
-- (void) remove: (BPDTimesStore *) times
+- (void)removeTime: (BPDTimes *) times
 {
-    [self.managedObjectContext deleteObject:times];
+    [self.managedObjectContext deleteObject: times];
 }
 
 - (BOOL)saveChanges
@@ -120,7 +120,7 @@
     NSError *error;
     
     if ([self.managedObjectContext hasChanges]) {
-        BOOL successful = [self.managedObjectContext save:&error];
+        BOOL successful = [self.managedObjectContext save: &error];
         
         if (!successful)
         {
